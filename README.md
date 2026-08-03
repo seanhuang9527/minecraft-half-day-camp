@@ -1,6 +1,6 @@
 # Minecraft 麥塊程式半日營教案
 
-這個 repository 保存可交接給主管與授課老師使用的 Minecraft Education 半日營教案、MakeCode Python 程式、程式截圖及課程地圖。
+這個 repository 保存可交接給授課老師使用的 Minecraft Education 半日營教案、MakeCode Python 程式、程式截圖及課程地圖。
 
 ## 使用方式
 
