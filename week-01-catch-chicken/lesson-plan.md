@@ -7,7 +7,7 @@
 
 ## 課前準備
 
-- 使用地圖：`maps/神木村8人版.mcworld`
+- 使用地圖：[下載神木村8人版.mcworld](maps/神木村8人版.mcworld)
 - 學生執行程式時，將學生權限設置為操作者（皇冠）。
 - 課前確認每台電腦都能開啟 Minecraft Education 與 MakeCode。
 - 先以教師帳號測試低、中、高階程式。
