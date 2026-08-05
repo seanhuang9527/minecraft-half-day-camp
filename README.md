@@ -17,3 +17,4 @@
 | 梯次 E | 梯次E_麥塊程式沙漠荒野 | 09:00－12:00 | [查看教案](batch-e-desert-wilderness/lesson-plan.md) |
 | 梯次 G | 梯次G_麥塊程式怪物專家 | 09:00－12:00 | [查看教案](batch-g-monster-expert/lesson-plan.md) |
 | 梯次 A | 梯次A：麥塊程式求生大冒險 | 09:00－12:00 | [查看教案](batch-a-survival-adventure/lesson-plan.md) |
+| 梯次 D | 梯次D_麥塊程式礦坑達人 | 09:00－12:00 | [查看教案](batch-d-mining-master/lesson-plan.md) |
