@@ -31,6 +31,11 @@
 
 ## 程式內容
 
+### 程式示範影片
+
+- [52 變數 抓雞大賽](https://www.youtube.com/watch?v=qrPjrtQVTF0)
+- [53 變數 抓雞大賽進階版](https://www.youtube.com/watch?v=hw1fY27qx2E)
+
 本梯次以「變數、事件、迴圈、條件判斷」為核心，程式完成後會直接成為抓雞大賽的遊戲規則。
 
 1. 基礎計分板
