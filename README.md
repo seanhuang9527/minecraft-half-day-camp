@@ -14,9 +14,3 @@
 | 週次 | 主題 | 時間 | 教案 |
 |---|---|---|---|
 | 第 1 週 | 梯次I_變數：狩獵大師 | 09:00－12:00 | [查看教案](week-01-catch-chicken/lesson-plan.md) |
-
-## 原始資料
-
-- [Notion 教案：梯次I_變數：狩獵大師](https://app.notion.com/p/3afedb57f20c819e97bec7fdad3ad19a)
-
-> 本專案預計使用私人 repository。若日後改為公開，請先確認家長回饋及其他內容沒有個人資料。
