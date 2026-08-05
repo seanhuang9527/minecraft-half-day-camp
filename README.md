@@ -15,3 +15,4 @@
 |---|---|---|---|
 | 第 1 週 | 梯次I_變數：狩獵大師 | 09:00－12:00 | [查看教案](week-01-catch-chicken/lesson-plan.md) |
 | 梯次 E | 梯次E_麥塊程式沙漠荒野 | 09:00－12:00 | [查看教案](batch-e-desert-wilderness/lesson-plan.md) |
+| 梯次 G | 梯次G_麥塊程式怪物專家 | 09:00－12:00 | [查看教案](batch-g-monster-expert/lesson-plan.md) |
