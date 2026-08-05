@@ -6,4 +6,4 @@
 
 原始來源為 Notion 教案的「課前準備」區塊：
 
-- [梯次I_麥塊程式瘋狂抓雞大賽](https://app.notion.com/p/3afedb57f20c819e97bec7fdad3ad19a)
+- [梯次I_變數：狩獵大師](https://app.notion.com/p/3afedb57f20c819e97bec7fdad3ad19a)
