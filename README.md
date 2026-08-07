@@ -21,3 +21,4 @@
 | 梯次 F | 梯次F_麥塊程式紅石樂園 | 09:00－12:00 | [查看教案](batch-f-redstone-park/lesson-plan.md) |
 | 梯次 H | 梯次H_麥塊程式新夢幻農場 | 09:00－12:00 | [查看教案](batch-h-dream-farm/lesson-plan.md) |
 | 梯次 B | 梯次B：麥塊程式紅石工程師 | 09:00－12:00 | [查看教案](batch-b-redstone-engineer/lesson-plan.md) |
+| 梯次 C | 梯次C_麥塊程式怪物攻城戰 | 09:00－12:00 | [查看教案](batch-c-monster-siege/lesson-plan.md) |
