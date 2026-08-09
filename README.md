@@ -22,3 +22,4 @@
 | 梯次 G | 梯次G_麥塊程式怪物專家 | 09:00－12:00 | [查看教案](batch-g-monster-expert/lesson-plan.md) |
 | 梯次 H | 梯次H_麥塊程式新夢幻農場 | 09:00－12:00 | [查看教案](batch-h-dream-farm/lesson-plan.md) |
 | 梯次 I | 梯次I_變數：狩獵大師 | 09:00－12:00 | [查看教案](week-01-catch-chicken/lesson-plan.md) |
+| 梯次 R | 梯次R_變數：挖礦挑戰賽 | 09:00－12:00 | [查看教案](batch-r-mining-challenge/lesson-plan.md) |
