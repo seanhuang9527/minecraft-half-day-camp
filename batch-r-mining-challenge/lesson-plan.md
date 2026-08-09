@@ -5,7 +5,7 @@
 - 時間：09:00－12:00，共三小時
 - 平台：Minecraft Education＋Microsoft MakeCode
 - 核心概念：變數、事件觸發、分數累積、迴圈與倒數計時
-- 建議地圖：空白平地世界，由老師課前生成共用大型礦坑
+- 建議地圖：[神木村8人版](../batch-a-survival-adventure/maps/神木村8人版.mcworld)，由老師課前在指定區域生成共用大型礦坑
 - 遊戲目標：在 60 秒內挖掘不同礦物，依礦物價值累積分數
 
 ## 教師備課快速總覽
@@ -18,10 +18,10 @@
 
 ## 遊戲準備
 
-- 使用空白平地世界，由老師或世界主持人統一設定世界。
-- 老師課前站在場地中心執行 `code/teacher-mine-generator.py` 的指令 `9`，生成 41×41×2 格礦坑。
+- 使用神木村8人版，由老師或世界主持人選定不影響既有建築的礦坑區域。
+- 老師課前站在場地中心執行本教案的教師專用礦坑生成程式，輸入 `9` 生成 41×41×2 格礦坑。
 - 礦坑生成程式只由老師操作，避免學生重複覆蓋共用世界。
-- 準備足夠的鎬子，並確認學生能挖掘煤礦、鐵礦、金礦與鑽石礦。
+- 同一場比賽所有學生統一使用同一種類的鎬子；鎬子種類由授課老師依課堂情況分配，並確認能挖掘四種礦物。
 - 在礦坑外圍標示起始位置，避免所有學生集中在同一點。
 - 學生程式不調整難度、遊戲模式、天氣、時間或遊戲規則。
 - 個人分數、倒數與結果只顯示給本機玩家，避免洗滿全班聊天室。
@@ -42,9 +42,173 @@
 
 三份學生程式彼此獨立，每次只使用一份。學生從空白專案逐塊完成，不以貼上 Python 作為主要教學方式。
 
-- 低階：`code/low.py`。所有學生至少完成礦物自動計分，直接用於挖礦比賽。
-- 中階：`code/medium.py`。使用時間變數、迴圈與暫停完成 60 秒倒數。
-- 高階：`code/high.py`。整合倒數與計分，時間到後停止加分並保留最後結果。
+### 教師專用礦坑生成程式
+
+只由老師或世界主持人執行。老師站在選定區域中心輸入 `9`，生成共用礦坑。
+
+```python
+index = 0
+
+
+def on_chat_9():
+    global index
+    blocks.fill(
+        STONE,
+        pos(-20, -2, -20),
+        pos(20, -1, 20),
+        FillOperation.REPLACE
+    )
+
+    index = 0
+    while index < 1500:
+        blocks.place(COAL_ORE, randpos(pos(-20, -2, -20), pos(20, -1, 20)))
+        index += 1
+
+    index = 0
+    while index < 1000:
+        blocks.place(IRON_ORE, randpos(pos(-20, -2, -20), pos(20, -1, 20)))
+        index += 1
+
+    index = 0
+    while index < 500:
+        blocks.place(GOLD_ORE, randpos(pos(-20, -2, -20), pos(20, -1, 20)))
+        index += 1
+
+    index = 0
+    while index < 200:
+        blocks.place(DIAMOND_ORE, randpos(pos(-20, -2, -20), pos(20, -1, 20)))
+        index += 1
+
+    player.tell(mobs.target(LOCAL_PLAYER), "礦坑完成")
+player.on_chat("9", on_chat_9)
+```
+
+### 低階完整程式：礦物計分
+
+所有學生至少完成礦物自動計分，直接用於挖礦比賽。
+
+```python
+score = 0
+
+
+def on_block_broken_iron_ore():
+    global score
+    score += 2
+    player.tell(mobs.target(LOCAL_PLAYER), score)
+blocks.on_block_broken(IRON_ORE, on_block_broken_iron_ore)
+
+
+def on_chat_2():
+    player.tell(mobs.target(LOCAL_PLAYER), score)
+player.on_chat("2", on_chat_2)
+
+
+def on_block_broken_coal_ore():
+    global score
+    score += 1
+    player.tell(mobs.target(LOCAL_PLAYER), score)
+blocks.on_block_broken(COAL_ORE, on_block_broken_coal_ore)
+
+
+def on_block_broken_gold_ore():
+    global score
+    score += 3
+    player.tell(mobs.target(LOCAL_PLAYER), score)
+blocks.on_block_broken(GOLD_ORE, on_block_broken_gold_ore)
+
+
+def on_chat_1():
+    global score
+    score = 0
+    gameplay.title(mobs.target(LOCAL_PLAYER), "挖礦挑戰賽", "開始!")
+player.on_chat("1", on_chat_1)
+
+
+def on_block_broken_diamond_ore():
+    global score
+    score += 5
+    player.tell(mobs.target(LOCAL_PLAYER), score)
+blocks.on_block_broken(DIAMOND_ORE, on_block_broken_diamond_ore)
+```
+
+### 中階完整程式：倒數計時器
+
+使用時間變數、迴圈與暫停完成 60 秒倒數。
+
+```python
+time = 0
+
+
+def on_chat_1():
+    global time
+    time = 60
+    gameplay.title(mobs.target(LOCAL_PLAYER), "挖礦挑戰賽", "開始!")
+
+    while time > 0:
+        player.execute("title @s actionbar 時間:" + str(time))
+        loops.pause(1000)
+        time += 0 - 1
+
+    player.execute("title @s actionbar 時間到")
+player.on_chat("1", on_chat_1)
+```
+
+### 高階完整程式：倒數＋計分
+
+整合倒數與計分，時間到後停止加分並保留最後結果。
+
+```python
+time = 0
+score = 0
+
+
+def on_block_broken_iron_ore():
+    global score
+    if time > 0:
+        score += 2
+blocks.on_block_broken(IRON_ORE, on_block_broken_iron_ore)
+
+
+def on_chat_2():
+    player.execute("title @s actionbar 最後總分:" + str(score))
+player.on_chat("2", on_chat_2)
+
+
+def on_block_broken_coal_ore():
+    global score
+    if time > 0:
+        score += 1
+blocks.on_block_broken(COAL_ORE, on_block_broken_coal_ore)
+
+
+def on_block_broken_gold_ore():
+    global score
+    if time > 0:
+        score += 3
+blocks.on_block_broken(GOLD_ORE, on_block_broken_gold_ore)
+
+
+def on_chat_1():
+    global time, score
+    time = 60
+    score = 0
+    gameplay.title(mobs.target(LOCAL_PLAYER), "挖礦挑戰賽", "開始!")
+
+    while time > 0:
+        player.execute("title @s actionbar 時間:" + str(time) + " 分數:" + str(score))
+        loops.pause(1000)
+        time += 0 - 1
+
+    player.execute("title @s actionbar 時間到 分數:" + str(score))
+player.on_chat("1", on_chat_1)
+
+
+def on_block_broken_diamond_ore():
+    global score
+    if time > 0:
+        score += 5
+blocks.on_block_broken(DIAMOND_ORE, on_block_broken_diamond_ore)
+```
 
 ## 半日營標準流程
 
