@@ -24,3 +24,4 @@
 | 梯次 I | 梯次I_變數：狩獵大師 | 09:00－12:00 | [查看教案](week-01-catch-chicken/lesson-plan.md) |
 | 梯次 K | 梯次K_巢狀迴圈：程式造橋闖關 | 09:00－12:00 | [查看教案](batch-k-nested-loop-bridge/lesson-plan.md) |
 | 梯次 R | 梯次R_變數：挖礦挑戰賽 | 09:00－12:00 | [查看教案](batch-r-mining-challenge/lesson-plan.md) |
+| 梯次 S | 梯次S_條件判斷：方塊崩落大逃亡 | 09:00－12:00 | [查看教案](batch-s-collapsing-floor/lesson-plan.md) |
