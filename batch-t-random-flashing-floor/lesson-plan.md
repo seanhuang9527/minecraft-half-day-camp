@@ -324,5 +324,4 @@ player.on_chat("5", on_on_chat5)
 
 ## 相關資料
 
-- [Notion 教案](https://app.notion.com/p/3bfedb57f20c8100a6e2e230c54af945)
 - 縮圖另附可編輯 SVG：`images/youtube-thumbnail.svg`
