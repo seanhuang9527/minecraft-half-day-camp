@@ -25,3 +25,4 @@
 | 梯次 K | 梯次K_巢狀迴圈：程式造橋闖關 | 09:00－12:00 | [查看教案](batch-k-nested-loop-bridge/lesson-plan.md) |
 | 梯次 R | 梯次R_變數：挖礦挑戰賽 | 09:00－12:00 | [查看教案](batch-r-mining-challenge/lesson-plan.md) |
 | 梯次 S | 梯次S_條件判斷：方塊崩落大逃亡 | 09:00－12:00 | [查看教案](batch-s-collapsing-floor/lesson-plan.md) |
+| 梯次 T | 梯次T_隨機數：閃動格子 | 09:00－12:00 | [查看教案](batch-t-random-flashing-floor/lesson-plan.md) |
