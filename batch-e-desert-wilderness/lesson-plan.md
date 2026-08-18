@@ -8,8 +8,8 @@
 
 ## 課前準備
 
-- 使用地圖：[下載神木村8人版.mcworld](maps/神木村8人版.mcworld)
-- 原 Notion 頁面另有「沙漠世界.mcworld」附件；本 GitHub 版本依最新安排統一使用神木村8人版，Notion 原附件沒有刪除。
+- 使用地圖：[下載神木村 v6](../shared/maps/神木村v6.mcworld)
+- 原 Notion 頁面另有「沙漠世界.mcworld」附件；本 GitHub 版本依最新安排統一使用神木村 v6，Notion 原附件沒有刪除。
 - 由老師開啟神木村世界，讓全班加入同一個世界。
 - 學生執行程式時，將學生權限設置為操作者（皇冠）。
 - 課前確認每台電腦能開啟 Minecraft Education、進入 MakeCode，並能貼上或建立程式。

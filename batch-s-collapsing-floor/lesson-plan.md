@@ -5,7 +5,7 @@
 - 時間：09:00－12:00，共三小時
 - 平台：Minecraft Education＋Microsoft MakeCode
 - 核心概念：玩家移動事件、相對座標與條件判斷
-- 使用地圖：[神木村v5](maps/神木村v5.mcworld)
+- 使用地圖：[神木村 v6](../shared/maps/神木村v6.mcworld)
 - 遊戲靈感：Hex-A-Gone／糖豆人式崩落地板
 - 遊戲目標：學生使用自己完成的程式，讓走過的羊毛地板消失，在三層平台中移動並成為最後留在場上的玩家。
 

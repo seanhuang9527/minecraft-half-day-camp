@@ -4,14 +4,15 @@
 
 ## 使用方式
 
-1. 先閱讀每一週資料夾內的 `lesson-plan.md`。
+1. 依梯次順序閱讀各資料夾內的 `lesson-plan.md`。
 2. 依學生程度選擇低、中或高階程式，不要把三份程式疊在同一個 MakeCode 專案。
 3. 將程式貼入 Minecraft Education 的 MakeCode Python 編輯器後，先測試再上課。
-4. 地圖放在該週的 `maps/` 資料夾；程式截圖放在 `images/` 資料夾。
+4. 所有梯次統一使用[神木村 v6](shared/maps/神木村v6.mcworld)；各梯次原有地圖保留作為歷史備份。
+5. 程式截圖放在各梯次的 `images/` 資料夾；程式與實測狀態請查看[梯次狀態表](docs/course-status.md)。
 
 ## 教案
 
-| 週次 | 主題 | 時間 | 教案 |
+| 梯次 | 主題 | 時間 | 教案 |
 |---|---|---|---|
 | 梯次 A | 梯次A_迴圈：求生大冒險 | 09:00－12:00 | [查看教案](batch-a-survival-adventure/lesson-plan.md) |
 | 梯次 B | 梯次B_迴圈：紅石工程師 | 09:00－12:00 | [查看教案](batch-b-redstone-engineer/lesson-plan.md) |
@@ -26,3 +27,11 @@
 | 梯次 R | 梯次R_變數：挖礦挑戰賽 | 09:00－12:00 | [查看教案](batch-r-mining-challenge/lesson-plan.md) |
 | 梯次 S | 梯次S_條件判斷：方塊崩落大逃亡 | 09:00－12:00 | [查看教案](batch-s-collapsing-floor/lesson-plan.md) |
 | 梯次 T | 梯次T_隨機數：閃動格子 | 09:00－12:00 | [查看教案](batch-t-random-flashing-floor/lesson-plan.md) |
+
+目前尚未建立完整教案的梯次為 J、L、M、N、O、P、Q；初步主題請查看[梯次 J～R 主題藍圖](docs/curriculum-roadmap-j-r.md)。
+
+## 共用資源
+
+- [下載神木村 v6](shared/maps/神木村v6.mcworld)
+- [查看梯次狀態表](docs/course-status.md)
+- [查看梯次 J～R 主題藍圖](docs/curriculum-roadmap-j-r.md)
