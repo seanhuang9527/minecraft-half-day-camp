@@ -164,6 +164,7 @@
 
 ## 程式與遊戲示範影片
 
+- [60. 炸彈超人](https://youtu.be/myJWrgwbCOg?si=c_RTYefBB1p-_wZ8)
 - [經典遊戲：超任炸彈超人](https://youtu.be/ZXCQpmKxAsM)
 - [Minecraft 轟炸超人 Bomberman](https://youtu.be/x5csci93tIM)
 
