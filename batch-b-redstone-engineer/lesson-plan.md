@@ -73,6 +73,9 @@
 
 ## 程式示範影片
 
+- [6. 紅石點燈](https://www.youtube.com/watch?v=nbwJHj0DYB4)
+- [6-1. 紅石點燈（正方形版）](https://www.youtube.com/watch?v=wuuGF71qjdQ)
+- [36. 用紅石裝置練習物品欄切換](https://www.youtube.com/watch?v=2MD8TdhEpB0)
 - [59. 巢狀迴圈節能鐵路](https://youtu.be/QbJUFraUPdU?si=FAkuhIfF4iF2hXyK)
 
 ## 程式內容
