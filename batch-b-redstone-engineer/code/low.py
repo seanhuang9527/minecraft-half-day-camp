@@ -1,4 +1,8 @@
-# 梯次 B 低階：十字挖礦法
-# 原教案只有積木截圖，文字程式碼區塊為空白。
-# 此檔案目前只是缺少項目註記，不是可貼入 MakeCode 執行的程式。
-# 待補：完整、獨立的 MakeCode Python、聊天指令、挖掘長度與實機測試結果。
+def on_on_chat():
+    agent.set_slot(1)
+
+    for index in range(36):
+        agent.move(FORWARD, 1)
+        agent.place(BACK)
+
+player.on_chat("1", on_on_chat)

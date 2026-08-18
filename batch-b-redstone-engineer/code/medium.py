@@ -1,4 +1,10 @@
-# 梯次 B 中階：魚骨挖礦法初階版
-# 原教案只有積木截圖，文字程式碼區塊為空白。
-# 此檔案目前只是缺少項目註記，不是可貼入 MakeCode 執行的程式。
-# 待補：完整、獨立的 MakeCode Python、聊天指令、礦道尺寸與實機測試結果。
+def on_on_chat():
+    for index in range(36):
+        agent.set_slot(2)
+        agent.place(RIGHT)
+
+        agent.set_slot(1)
+        agent.move(FORWARD, 1)
+        agent.place(BACK)
+
+player.on_chat("2", on_on_chat)

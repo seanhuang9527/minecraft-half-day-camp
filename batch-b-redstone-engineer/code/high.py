@@ -1,4 +1,16 @@
-# 梯次 B 高階延伸
-# 原梯次沒有第三個程式來源。
-# 此檔案目前只是缺少項目註記，不是可貼入 MakeCode 執行的程式。
-# 待補：第三個完整、獨立且能銜接課後遊戲的 MakeCode Python 程式。
+def on_on_chat():
+    agent.set_slot(1)
+
+    for index in range(4):
+        for index2 in range(8):
+            agent.move(FORWARD, 1)
+            agent.place(BACK)
+
+        agent.set_slot(2)
+        agent.place(RIGHT)
+
+        agent.set_slot(1)
+        agent.move(FORWARD, 1)
+        agent.place(BACK)
+
+player.on_chat("3", on_on_chat)
