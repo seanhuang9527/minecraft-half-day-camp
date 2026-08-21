@@ -1,4 +1,10 @@
-# 梯次 C 中階：聊天指令 2－第一個 4×4 平面
-# 原積木截圖有此獨立指令，但文字程式碼區塊為空白。
-# 此檔案目前只是缺少項目註記，不是可貼入 MakeCode 執行的程式。
-# 待補：完整、獨立的 MakeCode Python、Agent 第 1 格物品與實機測試結果。
+def on_on_chat():
+    agent.move(UP, 1)
+    agent.set_slot(1)
+    for index in range(4):
+        for index2 in range(4):
+            agent.place(DOWN)
+            agent.move(FORWARD, 1)
+        agent.move(BACK, 4)
+        agent.move(RIGHT, 1)
+player.on_chat("2", on_on_chat)
