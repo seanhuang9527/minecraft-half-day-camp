@@ -322,6 +322,4 @@ def on_on_chat5():
 player.on_chat("5", on_on_chat5)
 ```
 
-## 相關資料
 
-- 縮圖另附可編輯 SVG：`images/youtube-thumbnail.svg`
