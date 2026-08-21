@@ -1,4 +1,19 @@
-# 目前缺少
-# 「魚骨挖礦法 初階版」與「魚骨挖礦法 進階版」都有積木截圖，
-# 但兩個原程式頁的 Python 程式碼區塊都是空白。
-# 待後續討論並實機驗證後補上正式文字程式。
+def on_on_chat():
+    for index in range(4):
+        for index2 in range(5):
+            agent.destroy(FORWARD)
+            agent.move(FORWARD, 1)
+            agent.destroy(UP)
+        agent.move(BACK, 5)
+        for index3 in range(5):
+            agent.destroy(BACK)
+            agent.move(BACK, 1)
+            agent.destroy(UP)
+        agent.move(FORWARD, 5)
+        agent.turn(RIGHT_TURN)
+        for index4 in range(3):
+            agent.destroy(FORWARD)
+            agent.move(FORWARD, 1)
+            agent.destroy(UP)
+        agent.turn(LEFT_TURN)
+player.on_chat("4", on_on_chat)
