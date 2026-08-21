@@ -10,6 +10,10 @@
 4. 所有梯次統一使用[神木村 v6](shared/maps/神木村v6.mcworld)；各梯次原有地圖保留作為歷史備份。
 5. 程式截圖放在各梯次的 `images/` 資料夾。
 
+## 教師共用 SOP
+
+- [匯入 MakeCode 分享連結至 Minecraft Education](teacher-sops/import-makecode-share-link.md)
+
 ## 教案
 
 | 梯次 | 主題 | 時間 | 教案 |
