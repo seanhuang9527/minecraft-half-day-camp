@@ -34,4 +34,5 @@
 
 ## 共用資源
 
+- [神木村場地與座標指南](shared/maps/神木村.md)
 - [下載神木村 v6](shared/maps/神木村v6.mcworld)
