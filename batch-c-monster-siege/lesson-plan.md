@@ -98,7 +98,7 @@
 - **聊天指令：** `1`
 - **材料設定：** Agent第1格放紅石火把。
 - **完成標準：** Agent向上1格後，向下放置4格連續材料。
-- **MakeCode分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode分享連結：** https://makecode.com/_5dV0cwFo8L5g
 
 ```python
 def on_on_chat():
@@ -121,7 +121,7 @@ player.on_chat("1", on_on_chat)
 - **聊天指令：** `2`
 - **材料設定：** Agent第1格放紅石火把。
 - **完成標準：** 建立4列、每列4格，共16格的第一層平面。
-- **MakeCode分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode分享連結：** https://makecode.com/_iwqHhj0itRKE
 
 ```python
 def on_on_chat():
@@ -147,7 +147,7 @@ player.on_chat("2", on_on_chat)
 - **聊天指令：** `3`
 - **材料設定：** Agent第2格放基岩。
 - **完成標準：** Agent向上2格後建立第二個4×4平面，並與紅石火把層對齊。
-- **MakeCode分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode分享連結：** https://makecode.com/_5VHAqbUeJ3js
 
 ```python
 def on_on_chat():

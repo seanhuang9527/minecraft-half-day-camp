@@ -96,7 +96,7 @@ player.on_chat("4", on_on_chat)
 
 **功能測試：** 先檢查四個物品欄，再確認排列順序、Agent 返回距離與中繼器方向；若燈未亮，依序檢查供電位置、中繼器朝向與紅石元件間距。
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_E9PHhviquXK6
 
 ### 中階｜紅石方塊辨識機器人
 
@@ -124,7 +124,7 @@ player.on_chat("4", on_on_chat)
 
 **功能測試：** 在 15 格路線中放入已知數量的紅石方塊，執行後清點被挖除的格數與 Agent 收集數量。
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_8VmFUYbq3Wyh
 
 ### 高階｜雙向分類巡邏機器人
 
@@ -153,7 +153,7 @@ player.on_chat("4", on_on_chat)
 
 **功能測試：** 清點紅石方塊是否全被挖除，再檢查每個安全方塊右側是否有一個標記；若標記方向相反，先調整 Agent 起始面向再執行。
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_c3wHWj6uq0z8
 
 ## 場地、座標與保存
 

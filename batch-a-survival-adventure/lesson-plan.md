@@ -95,7 +95,7 @@
 - **學習概念：** Agent 方向、序列、固定次數迴圈。
 - **聊天指令：** `3`
 - **完成標準：** Agent 進入單格樹幹位置，向上砍四格並收集木頭。
-- **MakeCode 分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode 分享連結：** https://makecode.com/_L7q9X3Fdo7v0
 - [下載低階 Python](code/low.py)
 
 ```python
@@ -119,7 +119,7 @@ player.on_chat("3", on_on_chat)
 - **學習概念：** 將每層2×2樹幹拆成固定移動路徑，再用迴圈逐層執行。
 - **聊天指令：** `3`
 - **完成標準：** Agent 沿大型樹向上，清理每層四格樹幹並收集材料。
-- **MakeCode 分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode 分享連結：** https://makecode.com/_HYLdtm84DgAh
 - [下載中階 Python](code/medium.py)
 
 ```python
@@ -148,7 +148,7 @@ player.on_chat("3", on_on_chat)
 - **學習概念：** 使用條件式迴圈，不預先固定樹高。
 - **聊天指令：** `3`
 - **完成標準：** 上方有方塊時 Agent 持續向上砍伐，到樹頂後停止。
-- **MakeCode 分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode 分享連結：** https://makecode.com/_WzFHTz4qyHwx
 - [下載高階 Python](code/high.py)
 
 ```python

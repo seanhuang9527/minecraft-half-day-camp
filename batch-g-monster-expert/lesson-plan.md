@@ -94,7 +94,7 @@ player.on_chat("3", on_on_chat)
 
 **功能測試：** 檢查 12 個框架是否都朝向中心，再逐一放入終界之眼；任何一格方向錯誤都無法啟動，可用來帶學生理解面向與起點。
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_edW5vH9dxYhJ
 
 ### 中階｜Agent 蓋地獄門
 
@@ -134,7 +134,7 @@ player.on_chat("3", on_on_chat)
 
 **功能測試：** 逐邊檢查黑曜石是否連續，再確認 Agent 切換到打火石並在門框內點火；啟動後實際進入老師準備的安全任務區並返回。
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_Vg82DrL6fiHq
 
 ### 高階｜Agent 蓋附魔台
 
@@ -171,7 +171,7 @@ player.on_chat("1", on_on_chat)
 
 **功能測試：** 確認書櫃沒有重疊、四邊能閉合、中心地面已清除，並使用自己完成的附魔台附魔武器。
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_Y32W6zgWc4rW
 
 ## 場地、座標與保存
 

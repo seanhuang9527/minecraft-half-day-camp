@@ -80,7 +80,7 @@ player.on_chat("3", on_on_chat)
 
 ![低階樓梯挖礦積木程式](images/staircase-mining.png)
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_JeRYfuKkKWEe
 
 ### 中階｜十字挖礦
 
@@ -126,7 +126,7 @@ player.on_chat("4", on_on_chat)
 
 ![中階十字挖礦積木程式](images/cross-mining.png)
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_itLcULaJX0Xm
 
 ### 高階｜魚骨挖礦
 
@@ -170,7 +170,7 @@ player.on_chat("4", on_on_chat)
 
 ![魚骨挖礦成果參考](images/fishbone-advanced-02.png)
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_CCAMsoM7ohXx
 
 ## 場地與座標
 

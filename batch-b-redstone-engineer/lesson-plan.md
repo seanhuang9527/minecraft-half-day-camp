@@ -147,7 +147,7 @@
 - **聊天指令：** `1`
 - **材料設定：** Agent 第1格放動力鐵軌。
 - **完成標準：** 鐵軌從 A 點連續鋪設36格並抵達 B 點。
-- **MakeCode分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode分享連結：** https://makecode.com/_Htve1L0Fc5zT
 
 ```python
 def on_on_chat():
@@ -171,7 +171,7 @@ player.on_chat("1", on_on_chat)
 - **聊天指令：** `2`
 - **材料設定：** Agent 第1格放動力鐵軌，第2格放紅石火把。
 - **完成標準：** 完成36格鐵軌，並在每次迴圈嘗試於右側放置火把。
-- **MakeCode分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode分享連結：** https://makecode.com/_RvmLFRihh8JL
 
 ```python
 def on_on_chat():
@@ -197,7 +197,7 @@ player.on_chat("2", on_on_chat)
 - **聊天指令：** `3`
 - **材料設定：** Agent 第1格放動力鐵軌，第2格放紅石火把。
 - **完成標準：** 以4組「8格一般鋪設＋第9格供電」完成36格鐵路，只使用4支火把。
-- **MakeCode分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode分享連結：** https://makecode.com/_dc73Cq6zP5RK
 
 ```python
 def on_on_chat():

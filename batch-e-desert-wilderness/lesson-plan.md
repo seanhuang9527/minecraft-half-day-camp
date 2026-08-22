@@ -92,7 +92,7 @@ player.on_chat("3", on_on_chat)
 
 ![低階挖沙執行畫面](images/sand-miner-basic-02.png)
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_1MwJ2AJkH51R
 
 ### 中階｜雙點挖沙機器人
 
@@ -123,7 +123,7 @@ player.on_chat("3", on_on_chat)
 
 ![中階雙點挖沙積木程式](images/sand-miner-advanced.png)
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_UsRUDsc3wRai
 
 ### 高階｜自動建造玻璃空中橋
 
@@ -154,7 +154,7 @@ player.on_chat("3", on_on_chat)
 
 ![高階天空建造成果參考二](images/sky-city-02.png)
 
-**MakeCode 分享連結：** 待補
+**MakeCode 分享連結：** https://makecode.com/_9PfXyeEYfUbE
 
 ## 場地、座標與保存
 
