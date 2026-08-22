@@ -31,3 +31,9 @@
 小孩聯盟三民中心：07-381-4360
 
 感謝您的配合與支持，讓我們一起為孩子創造一個愉快的學習經驗！
+
+
+
+
+<img width="1003" height="1568" alt="exec-8346b0b2-9723-4132-ad5e-6ecdd675042d" src="https://github.com/user-attachments/assets/ce1c0532-283e-4578-a311-251aa200d987" />
+
