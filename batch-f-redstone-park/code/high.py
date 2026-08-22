@@ -1,3 +1,10 @@
-# 目前缺少
-# 原始梯次只有兩個程式頁，沒有第三個高階程式來源。
-# 待後續討論高階延伸，再補上完整 MakeCode Python 與實機驗證結果。
+def on_on_chat():
+    agent.set_slot(1)
+    for index in range(15):
+        agent.move(FORWARD, 1)
+        if agent.inspect(AgentInspection.BLOCK, DOWN) == 152:
+            agent.destroy(DOWN)
+            agent.collect_all()
+        else:
+            agent.place(RIGHT)
+player.on_chat("4", on_on_chat)

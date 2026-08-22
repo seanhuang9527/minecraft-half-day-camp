@@ -1,5 +1,7 @@
-# 目前缺少
-# 程式名稱：if 判斷挖紅石
-# 原始資料只有積木截圖，文字程式碼區塊是空白。
-# 截圖是重複 15 次、偵測下方方塊 ID 152；家長回饋對距離、方向與目標方塊的描述互相矛盾。
-# 待確認目標方塊後，補上完整 MakeCode Python 並在 Minecraft Education 實機驗證。
+def on_on_chat():
+    for index in range(15):
+        agent.move(FORWARD, 1)
+        if agent.inspect(AgentInspection.BLOCK, DOWN) == 152:
+            agent.destroy(DOWN)
+        agent.collect_all()
+player.on_chat("4", on_on_chat)

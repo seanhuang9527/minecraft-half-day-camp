@@ -1,4 +1,16 @@
-# 目前缺少
-# 程式名稱：放紅石連接燈
-# 原始資料只有積木截圖，文字程式碼區塊是空白。
-# 待後續補上完整 MakeCode Python 並在 Minecraft Education 實機驗證。
+def on_on_chat():
+    agent.move(UP, 1)
+    for index in range(3):
+        agent.move(FORWARD, 1)
+        agent.set_slot(1)
+        agent.place(DOWN)
+        agent.move(FORWARD, 1)
+        agent.set_slot(2)
+        agent.place(DOWN)
+        agent.move(FORWARD, 1)
+        agent.set_slot(3)
+        agent.place(DOWN)
+    agent.move(BACK, 9)
+    agent.set_slot(4)
+    agent.place(DOWN)
+player.on_chat("4", on_on_chat)
