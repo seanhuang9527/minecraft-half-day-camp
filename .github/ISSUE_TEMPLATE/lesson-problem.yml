@@ -1,0 +1,36 @@
+name: 教案問題回報
+description: 回報半日營教案問題
+title: "[教案問題] "
+
+body:
+  - type: dropdown
+    id: lesson
+    attributes:
+      label: 選擇梯次
+      options:
+        - 梯次 A
+        - 梯次 B
+        - 梯次 C
+        - 梯次 D
+        - 梯次 E
+        - 梯次 F
+        - 梯次 G
+        - 梯次 H
+        - 梯次 I
+        - 梯次 J
+        - 梯次 K
+        - 梯次 L
+        - 梯次 M
+        - 神木村
+        - 半日營 SOP
+        - 其他
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 遇到什麼問題？
+      placeholder: 請簡單說明問題，也可以直接拖入截圖。
+    validations:
+      required: true
