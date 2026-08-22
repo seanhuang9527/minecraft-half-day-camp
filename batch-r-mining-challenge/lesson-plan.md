@@ -145,7 +145,9 @@ blocks.on_block_broken(DIAMOND_ORE, on_block_broken_diamond_ore)
 
 - [下載低階 Python](code/low.py)
 - MakeCode 分享連結：https://makecode.com/_h4wdRahoC1q1
-- 積木程式圖片：**待補**
+
+![低階礦物自動計分積木程式](images/low-score-blocks.png)
+
 - 功能測試：分別挖一個煤、鐵、金、鑽石礦，總分應依序增加 1、2、3、5；輸入 `2` 應顯示相同總分。
 
 ### 中階｜60 秒倒數
@@ -171,7 +173,9 @@ player.on_chat("1", on_chat_1)
 
 - [下載中階 Python](code/medium.py)
 - MakeCode 分享連結：https://makecode.com/_FuhKF0fEALvh
-- 積木程式圖片：**待補**
+
+![中階 60 秒倒數積木程式](images/medium-timer-blocks.png)
+
 - 功能測試：先把 60 改成 5，確認每秒更新並在 5 秒後顯示時間到，再改回正式數值。
 
 ### 高階｜倒數與計分
@@ -227,7 +231,11 @@ blocks.on_block_broken(DIAMOND_ORE, on_block_broken_diamond_ore)
 
 - [下載高階 Python](code/high.py)
 - MakeCode 分享連結：https://makecode.com/_5CTJMo34V9T2
-- 積木程式圖片：**待補**
+
+![高階倒數與計分事件積木程式](images/high-score-events-blocks.png)
+
+![高階正式比賽主程式積木](images/high-main-timer-blocks.png)
+
 - 功能測試：先改成 5 秒，倒數中挖礦應加分，時間到後再挖礦應維持原分數。
 
 ## 場地保存、重置與跨地圖使用

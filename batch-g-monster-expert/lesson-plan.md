@@ -173,7 +173,7 @@ def on_on_chat():
 player.on_chat("1", on_on_chat)
 ```
 
-**積木程式圖片：** 待補（現有附件只有建造結果，沒有這份程式的積木截圖）
+![高階附魔台積木程式](images/high-enchant-table-blocks.png)
 
 ![高階附魔台建造結果一](images/enchant-table-01.png)
 

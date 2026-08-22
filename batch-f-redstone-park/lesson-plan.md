@@ -159,7 +159,7 @@ def on_on_chat():
 player.on_chat("4", on_on_chat)
 ```
 
-**積木程式圖片：** 待補（現有附件沒有這份新增高階程式的積木截圖）
+![高階雙向分類巡邏積木程式](images/high-if-else-classifier-blocks.png)
 
 **功能測試：** 清點紅石方塊是否全被挖除，再檢查每個安全方塊右側是否有一個標記；若標記方向相反，先調整 Agent 起始面向再執行。
 

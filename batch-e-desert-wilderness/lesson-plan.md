@@ -156,7 +156,7 @@ def on_on_chat():
 player.on_chat("3", on_on_chat)
 ```
 
-**積木程式圖片：** 待補（現有附件沒有這份新增高階程式的積木截圖）
+![高階玻璃空中橋積木程式](images/high-glass-bridge-blocks.png)
 
 ![高階天空建造成果參考一](images/sky-city-01.png)
 
