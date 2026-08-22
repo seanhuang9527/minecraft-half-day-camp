@@ -76,7 +76,7 @@ player.on_chat("4", on_on_chat)
 ```
 
 - [下載低階 Python](code/low.py)
-- MakeCode 分享連結：**待補**
+- MakeCode 分享連結：https://makecode.com/_FDreRuPAHJy4
 
 `agent.set_slot(1)` 是為了固定使用第 1 格種子；既有積木圖未呈現這一步，實際上課建議補上，避免學生選錯物品欄。
 
@@ -113,7 +113,7 @@ player.on_chat("3", on_on_chat)
 ```
 
 - [下載中階 Python](code/medium.py)
-- MakeCode 分享連結：**待補**
+- MakeCode 分享連結：https://makecode.com/_WYo5MyfuEREP
 
 ![中階積木程式](images/auto-harvest-blocks.png)
 
@@ -157,7 +157,7 @@ player.on_chat("5", on_on_chat)
 ```
 
 - [下載高階 Python](code/high.py)
-- MakeCode 分享連結：**待補**
+- MakeCode 分享連結：https://makecode.com/_Tvm9AK9U3cHA
 
 ![高階積木程式](images/farm-fence-blocks.png)
 

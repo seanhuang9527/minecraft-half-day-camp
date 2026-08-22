@@ -176,7 +176,7 @@
 
 完成目標：自動計分板。老師負責宣布開始與時間到；學生輸入 `1` 將分數歸零。
 
-- **MakeCode 分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode 分享連結：** https://makecode.com/_bcf5ff1tWFJs
 - [下載低階 Python](code/low.py)
 
 ```python
@@ -203,7 +203,7 @@ mobs.on_mob_killed(CHICKEN, on_mob_killed_chicken)
 
 完成目標：有開始、30 秒倒數、限時計分與結束成績的完整比賽。學生輸入 `2` 開始。
 
-- **MakeCode 分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode 分享連結：** https://makecode.com/_UrCVEHEUa66a
 - [下載中階 Python](code/medium.py)
 
 ```python
@@ -239,7 +239,7 @@ mobs.on_mob_killed(CHICKEN, on_mob_killed_chicken)
 
 完成目標：在完整比賽中加入扣分、獎勵與陷阱；所有效果只在倒數期間生效。學生輸入 `2` 開始。
 
-- **MakeCode 分享連結：** 待老師完成實機驗證後補入。
+- **MakeCode 分享連結：** https://makecode.com/_4AzdibcT2YTV
 - [下載高階 Python](code/high.py)
 
 ```python

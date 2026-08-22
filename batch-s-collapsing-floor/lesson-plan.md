@@ -78,7 +78,7 @@ player.on_travelled(WALK, on_travelled_walk)
 ```
 
 - [下載低階 Python](code/low.py)
-- MakeCode 分享連結：**待補**
+- MakeCode 分享連結：https://makecode.com/_4tK5r4UtH6jL
 
 ![低階程式](images/low-program.png)
 
@@ -98,7 +98,7 @@ player.on_travelled(WALK, on_travelled_walk)
 ```
 
 - [下載中階 Python](code/medium.py)
-- MakeCode 分享連結：**待補**
+- MakeCode 分享連結：https://makecode.com/_FqaH1XVrPJmR
 
 ![中階程式](images/medium-program.png)
 
@@ -135,7 +135,7 @@ player.on_travelled(WALK, on_travelled_walk)
 ```
 
 - [下載高階 Python](code/high.py)
-- MakeCode 分享連結：**待補**
+- MakeCode 分享連結：https://makecode.com/_iizbuKVH7FLJ
 
 ![高階程式](images/high-program.png)
 

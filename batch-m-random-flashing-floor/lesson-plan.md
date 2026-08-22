@@ -105,7 +105,7 @@ player.on_chat("1", on_on_chat)
 
 ![低階程式](images/student-beginner.png)
 
-- **MakeCode分享連結：** [低階｜梯次M_閃動格子](https://makecode.com/_81rhrxg3y1fg)
+- **MakeCode分享連結：** [低階｜梯次M_閃動格子](https://makecode.com/_FykVaaVzjCVr)
 - **測試方式：** 連續輸入數次 `1`，確認每次都會顯示1、2、3或4，且抽出的數字可能改變。
 - **完成後活動：** 老師顯示抽出的數字，學生跑到數字代表的顏色。
 
@@ -136,7 +136,7 @@ player.on_chat("1", on_on_chat)
 
 ![中階程式](images/student-intermediate.png)
 
-- **MakeCode分享連結：** [中階｜梯次M_閃動格子](https://makecode.com/_3ayP5vEaiKHH)
+- **MakeCode分享連結：** [中階｜梯次M_閃動格子](https://makecode.com/_axfLFqckh187)
 - **測試方式：** 連續執行並確認結果可能出現1～4。
 - **完成後活動：** 學生依數字與顏色對照表移動到安全顏色。
 
@@ -181,7 +181,7 @@ player.on_chat("1", on_on_chat)
 ![高階程式第二段](images/student-advanced-2.png)
 ![高階程式第三段](images/student-advanced-3.png)
 
-- **MakeCode分享連結：** [高階｜梯次M_閃動格子](https://makecode.com/_WiyJH0T3wL9U)
+- **MakeCode分享連結：** [高階｜梯次M_閃動格子](https://makecode.com/_eqr0d9h3v0g1)
 - **測試方式：** 在 Minecraft Education 場地實測，確認公布的顏色保留、另外三色消失，而且不影響其他練習場。
 - **完成後活動：** 學生使用自己的程式主持一回合練習賽。
 

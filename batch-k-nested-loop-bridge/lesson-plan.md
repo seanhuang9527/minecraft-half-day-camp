@@ -176,7 +176,7 @@ player.on_chat("2", on_on_chat)
 ```
 
 - [下載低階 Python](code/low.py)
-- MakeCode 分享連結：**待補**
+- MakeCode 分享連結：https://makecode.com/_5HyWqYWMTEsw
 
 ![低階水平平台積木](images/low-program.png)
 
@@ -206,7 +206,7 @@ player.on_chat("3", on_on_chat)
 ```
 
 - [下載中階 Python](code/medium.py)
-- MakeCode 分享連結：**待補**
+- MakeCode 分享連結：https://makecode.com/_d641gm2CKi09
 
 ![中階往上平台積木](images/medium-program.png)
 
@@ -236,7 +236,7 @@ player.on_chat("4", on_on_chat)
 ```
 
 - [下載高階 Python](code/high.py)
-- MakeCode 分享連結：**待補**
+- MakeCode 分享連結：https://makecode.com/_eof4qTaRsV1P
 
 ![高階往下平台積木](images/high-program.png)
 
