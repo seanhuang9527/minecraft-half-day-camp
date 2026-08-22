@@ -1,6 +1,5 @@
 # Minecraft 麥塊程式半日營教案
 
-
 ## 使用方式
 
 1. 依梯次順序閱讀各資料夾內的 `lesson-plan.md`。
@@ -36,3 +35,4 @@
 
 - [神木村場地與座標指南](shared/maps/神木村.md)
 - [下載神木村 v8](shared/maps/神木村v8.mcworld)
+- [教案問題回報](https://github.com/seanhuang9527/minecraft-half-day-camp/issues/new?template=lesson-problem.yml)
