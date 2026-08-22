@@ -12,6 +12,7 @@
 
 ## 教師 SOP
 
+- [半日營 SOP](teacher-sops/half-day-camp-sop.md)
 - [匯入 MakeCode 分享連結至 Minecraft Education](teacher-sops/import-makecode-share-link.md)
 
 ## 教案
