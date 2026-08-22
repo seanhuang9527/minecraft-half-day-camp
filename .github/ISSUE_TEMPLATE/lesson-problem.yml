@@ -3,6 +3,12 @@ description: 回報半日營教案問題
 title: "[教案問題] "
 
 body:
+  - type: markdown
+    attributes:
+      value: |
+        提交前，可以先查看是否已有相同問題：
+        [查看大家回報的問題](https://github.com/seanhuang9527/minecraft-half-day-camp/issues)
+
   - type: dropdown
     id: lesson
     attributes:
