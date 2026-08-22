@@ -7,7 +7,7 @@
 1. 依梯次順序閱讀各資料夾內的 `lesson-plan.md`。
 2. 依學生程度選擇低、中或高階程式，不要把三份程式疊在同一個 MakeCode 專案。
 3. 將程式貼入 Minecraft Education 的 MakeCode Python 編輯器後，先測試再上課。
-4. 所有梯次統一使用[神木村 v6](shared/maps/神木村v6.mcworld)；各梯次原有地圖保留作為歷史備份。
+4. 所有梯次統一使用[神木村 v8](shared/maps/神木村v8.mcworld)；各梯次原有地圖保留作為歷史備份。
 5. 程式截圖放在各梯次的 `images/` 資料夾。
 
 ## 教師 SOP
@@ -35,4 +35,4 @@
 ## 共用資源
 
 - [神木村場地與座標指南](shared/maps/神木村.md)
-- [下載神木村 v6](shared/maps/神木村v6.mcworld)
+- [下載神木村 v8](shared/maps/神木村v8.mcworld)

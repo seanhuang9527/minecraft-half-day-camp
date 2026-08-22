@@ -11,7 +11,7 @@
 
 ## 課前準備
 
-- 正式地圖：[神木村 v6](../shared/maps/神木村v6.mcworld)
+- 正式地圖：[神木村 v8](../shared/maps/神木村v8.mcworld)
 - 備用地圖：[神木村 v3](maps/神木村v3.mcworld)
 - 每台電腦確認能加入同一世界、按 C 開啟 MakeCode 並建立空白專案。
 - 確認神木村「程式挑戰入口」NPC 的「前往 A 點」按鈕可用，B、C、D 點 NPC 能返回神木村。

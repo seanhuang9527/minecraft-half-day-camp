@@ -13,7 +13,7 @@
 
 ## 課前準備
 
-- 正式上課地圖：[神木村 v6](../shared/maps/神木村v6.mcworld)
+- 正式上課地圖：[神木村 v8](../shared/maps/神木村v8.mcworld)
 - 備用舊版地圖：[神木村 8 人版](maps/神木村8人版.mcworld)
 - 確認每台電腦可以開啟 Minecraft Education、加入老師世界並連接 MakeCode。
 - 學生執行程式時，需有可使用指令與 Agent 的權限。
