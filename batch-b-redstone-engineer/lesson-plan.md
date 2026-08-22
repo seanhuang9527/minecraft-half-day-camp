@@ -1,8 +1,8 @@
-# 梯次B_迴圈：紅石工程師
+# 梯次 B｜迴圈：紅石工程師
 
 ## 基本資訊
 
-- **課程名稱：** 梯次B_迴圈：紅石工程師
+- **課程名稱：** 梯次 B｜迴圈：紅石工程師
 - **課程時間：** 09:00－12:00，共三小時
 - **使用平台：** Minecraft Education、Microsoft MakeCode
 - **程式概念：** Agent 控制、方向、物品欄切換、迴圈、巢狀迴圈、紅石供電
@@ -92,6 +92,50 @@
 - [延伸｜隱藏2×2活塞門](https://youtu.be/VuXbVEHB0xI)
 - [延伸｜半自動小麥收割機](https://youtu.be/XzjnPqRDU00)
 - [延伸｜紅石焚化爐](https://youtu.be/dHRh5E5UXjQ?si=VGCUvFC5SOHtwp_N)
+
+## 延伸活動參考
+
+以下圖片供主要鐵路任務提早完成時使用。老師依剩餘時間挑選一項展示，不需在同一堂課全部完成。
+
+### 挖礦路線設計
+
+比較十字挖礦與魚骨挖礦的路線，討論「如何用規律減少重複移動」。
+
+![十字挖礦路線](images/cross-mining.png)
+
+![魚骨挖礦基礎路線](images/fishbone-basic.png)
+
+### 紅石門與活板門
+
+搭配活塞門示範影片，觀察紅石訊號如何控制入口開關。
+
+![活塞門參考](images/piston-door.png)
+
+![活板門參考](images/trapdoor.png)
+
+### 半自動農場
+
+先看完成配置，再依圖片辨認漏斗、發射器、柵欄與紅石中繼器所負責的功能。
+
+![半自動農場配置](images/auto-farm-overview.png)
+
+![漏斗合成方式一](images/auto-farm-hopper-recipe-01.png)
+
+![漏斗合成方式二](images/auto-farm-hopper-recipe-02.png)
+
+![發射器合成方式](images/auto-farm-dispenser-recipe.png)
+
+![柵欄合成方式](images/auto-farm-fence-recipe.png)
+
+![紅石中繼器合成方式](images/auto-farm-repeater-recipe.png)
+
+### 紅石焚化爐
+
+先確認安全範圍，再比較裝置配置與完成後外觀；由老師統一示範，不讓學生在其他建築旁自行測試。
+
+![紅石焚化爐配置](images/incinerator-overview.png)
+
+![紅石焚化爐完成圖](images/incinerator-finished.png)
 
 ## 低、中、高分級教學
 
@@ -185,6 +229,7 @@ player.on_chat("3", on_on_chat)
 - **聊天指令：** `9`
 - **生成原點：** 老師站立位置；程式使用相對座標向前建立40格長的場地。
 - **使用提醒：** 執行前確認前方至少有41×41格空間，並先備份世界；程式會清除生成範圍內原有方塊。
+- [下載教師場地 Python](code/teacher-field.py)
 
 ```python
 def build_lane(lane_x, start_wool):
@@ -272,4 +317,6 @@ player.on_chat("9", on_on_chat)
 
 最後，孩子透過礦車實際測試成果，觀察程式是否有漏放、方向錯誤或材料使用過多的情況，從遊戲中理解程式設計的規律、除錯與資源效率。
 
-今天每位孩子都非常投入，也順利完成自己的鐵路工程！
+孩子今天完成的程度為【低階／中階／高階】，課堂表現【請填寫具體表現，例如：能自行檢查 Agent 面向或材料格】。在通車測試中完成【請填寫成果】，並能說明【請填寫孩子掌握的概念】。
+
+回家後可以請孩子分享：「為什麼高階程式可以用更少的紅石火把完成36格鐵路？」幫助孩子用自己的話整理今天的學習。

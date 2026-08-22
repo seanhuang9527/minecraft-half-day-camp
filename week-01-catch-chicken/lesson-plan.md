@@ -1,8 +1,8 @@
-# 梯次I_變數：狩獵大師
+# 梯次 I｜變數：狩獵大師
 
 - 課程時間：09:00－12:00
 - 遊戲版本：Minecraft Education
-- 程式平台：Microsoft MakeCode Python
+- 程式平台：Microsoft MakeCode
 - 核心概念：變數、事件、迴圈、條件判斷
 
 ## 課前準備
@@ -15,6 +15,16 @@
 - 已實測多名學生可同時執行程式並各自計分；正式活動可採全班同步開賽。
 - 準備抓雞比賽區域；基礎賽只放雞，進階賽再加入牛、羊及蝙蝠。
 - 準備全班成績紀錄；每回合開始前確認場內動物數量足夠，並讓學生使用相同裝備。
+
+## 場地與地圖
+
+- **正式地圖：** [神木村 v6](../shared/maps/神木村v6.mcworld)
+- **場地位置：** 本活動不綁定固定座標。老師在開闊、邊界清楚且不影響其他建築的區域設置競賽場。
+- **座標記錄：** 到達場地中心後開啟座標顯示，將當天的中心座標寫在白板或課堂紀錄；集合與補充動物時都以此座標為準。
+- **場地配置：** 基礎賽只生成雞；進階賽加入牛、羊及蝙蝠。各類動物應分散在相同競賽範圍內。
+- **保存方式：** 課前保留一份未使用的世界備份；每梯次結束後重新載入備份，避免前一班的動物數量與場地狀態影響下一班。
+- **結構方塊：** 本活動沒有固定建築，不需匯入結構檔。若改用其他地圖，只要重新選定空地並記錄中心座標即可。
+- **重置方式：** 清除剩餘動物、重新生成下一回合所需動物，讓學生回到集合點並重新啟動自己的程式。
 
 ## 教師備課快速總覽
 
@@ -148,15 +158,15 @@
 | **11:25－11:50** | 進階功能測試與成果挑戰 |
 | **11:50－12:00** | 課程複習與收尾 |
 
-## 分級教學設計
+## 分級完成標準
 
-全班預設目標是完成中階。年紀較小、第一次玩 Minecraft 或第一次寫程式的學生，以完成低階並能參加比賽為成功；進度較快、年紀較大、較熟練或參加過多次的學生，繼續完成高階，不必等待其他同學。
+全班預設完成中階；完成後可繼續挑戰高階，不需等待其他同學。
 
-| 層級 | 適合學生 | 程式完成標準 | 完成後的遊戲效果 |
-|---|---|---|---|
-| **低** | 年紀較小、第一次玩 Minecraft、第一次寫程式 | 分數歸零；擊倒雞加 1 分；顯示目前分數 | 可參加基礎抓雞賽，由老師協助控制回合時間 |
-| **中（全班預設）** | 所有學生的主要完成目標 | 低階功能＋30 秒倒數；時間內才可得分；時間到顯示結果 | 可獨立執行一場有開始、計分與結束的完整比賽 |
-| **高** | 進度快、年紀較大、操作熟練或參加過多次 | 中階功能＋牛扣分、羊加速、蝙蝠失明 | 加入陷阱、獎勵與策略選擇，完成進階動物競技場 |
+| 層級 | 程式完成標準 | 完成後的遊戲效果 |
+|---|---|---|
+| **低** | 分數歸零；擊倒雞加 1 分；顯示目前分數 | 可由老師協助計時，使用自己的計分板參加抓雞賽 |
+| **中（全班預設）** | 低階功能＋30 秒倒數；時間內才可得分；時間到顯示結果 | 可獨立執行一場有開始、計分與結束的完整比賽 |
+| **高** | 中階功能＋牛扣分、羊加速、蝙蝠失明 | 加入陷阱、獎勵與策略選擇，完成進階動物競技賽 |
 
 ## 實際程式碼
 
@@ -166,7 +176,26 @@
 
 完成目標：自動計分板。老師負責宣布開始與時間到；學生輸入 `1` 將分數歸零。
 
-- [開啟低階完整程式碼](code/low.py)
+- **MakeCode 分享連結：** 待老師完成實機驗證後補入。
+- [下載低階 Python](code/low.py)
+
+```python
+score = 0
+
+def on_chat_reset():
+    global score
+    score = 0
+    player.tell(mobs.target(LOCAL_PLAYER), "分數歸零")
+
+player.on_chat("1", on_chat_reset)
+
+def on_mob_killed_chicken():
+    global score
+    score += 1
+    player.tell(mobs.target(LOCAL_PLAYER), "分數：" + str(score))
+
+mobs.on_mob_killed(CHICKEN, on_mob_killed_chicken)
+```
 
 ![低階程式積木截圖](images/low-program.png)
 
@@ -174,7 +203,35 @@
 
 完成目標：有開始、30 秒倒數、限時計分與結束成績的完整比賽。學生輸入 `2` 開始。
 
-- [開啟中階完整程式碼](code/medium.py)
+- **MakeCode 分享連結：** 待老師完成實機驗證後補入。
+- [下載中階 Python](code/medium.py)
+
+```python
+time_left = 0
+score = 0
+
+def on_chat_start():
+    global time_left
+    global score
+    score = 0
+    time_left = 30
+    player.tell(mobs.target(LOCAL_PLAYER), "比賽開始！")
+    for index in range(30):
+        player.tell(mobs.target(LOCAL_PLAYER), "剩餘時間：" + str(time_left))
+        loops.pause(1000)
+        time_left += -1
+    player.tell(mobs.target(LOCAL_PLAYER), "時間到！最後得分：" + str(score))
+
+player.on_chat("2", on_chat_start)
+
+def on_mob_killed_chicken():
+    global score
+    if time_left > 0:
+        score += 1
+        player.tell(mobs.target(LOCAL_PLAYER), "分數：" + str(score))
+
+mobs.on_mob_killed(CHICKEN, on_mob_killed_chicken)
+```
 
 ![中階程式積木截圖](images/medium-program.png)
 
@@ -182,40 +239,80 @@
 
 完成目標：在完整比賽中加入扣分、獎勵與陷阱；所有效果只在倒數期間生效。學生輸入 `2` 開始。
 
-- [開啟高階完整程式碼](code/high.py)
+- **MakeCode 分享連結：** 待老師完成實機驗證後補入。
+- [下載高階 Python](code/high.py)
+
+```python
+time_left = 0
+score = 0
+
+def on_chat_start():
+    global time_left
+    global score
+    score = 0
+    time_left = 30
+    player.tell(mobs.target(LOCAL_PLAYER), "進階賽開始！")
+    for index in range(30):
+        player.tell(mobs.target(LOCAL_PLAYER), "剩餘時間：" + str(time_left))
+        loops.pause(1000)
+        time_left += -1
+    player.tell(mobs.target(LOCAL_PLAYER), "時間到！最後得分：" + str(score))
+
+player.on_chat("2", on_chat_start)
+
+def on_mob_killed_chicken():
+    global score
+    if time_left > 0:
+        score += 1
+        player.tell(mobs.target(LOCAL_PLAYER), "抓到雞！分數：" + str(score))
+
+mobs.on_mob_killed(CHICKEN, on_mob_killed_chicken)
+
+def on_mob_killed_cow():
+    global score
+    if time_left > 0:
+        score += -3
+        player.tell(mobs.target(LOCAL_PLAYER), "打錯目標，扣 3 分！目前分數：" + str(score))
+
+mobs.on_mob_killed(COW, on_mob_killed_cow)
+
+def on_mob_killed_sheep():
+    if time_left > 0:
+        player.tell(mobs.target(LOCAL_PLAYER), "獲得 10 秒加速！")
+        mobs.apply_effect(SPEED, mobs.target(LOCAL_PLAYER), 10, 1)
+
+mobs.on_mob_killed(SHEEP, on_mob_killed_sheep)
+
+def on_mob_killed_bat():
+    if time_left > 0:
+        player.tell(mobs.target(LOCAL_PLAYER), "碰到陷阱，失明 5 秒！")
+        mobs.apply_effect(BLINDNESS, mobs.target(LOCAL_PLAYER), 5, 1)
+
+mobs.on_mob_killed(BAT, on_mob_killed_bat)
+```
 
 ![高階程式積木截圖一](images/high-program-01.png)
 
 ![高階程式積木截圖二](images/high-program-02.png)
 
-## 家長回饋
+## 上課知識點
 
-<details>
-<summary>課後回饋範本</summary>
+- **變數：** `score` 與 `time_left` 像有名稱的資料盒，分別保存分數與剩餘時間。
+- **設為與改變：** `score = 0` 是重設；`score += 1` 與 `score += -3` 是依目前數值增減。
+- **事件：** 聊天指令與擊倒不同生物，都能觸發各自的程式。
+- **固定次數迴圈：** 重複30次並每次暫停1000毫秒，形成30秒倒數。
+- **條件判斷：** `time_left > 0` 限制只有比賽期間能得分或觸發效果。
+- **遊戲規則設計：** 雞、牛、羊與蝙蝠分別代表得分、扣分、獎勵與陷阱，讓程式邏輯影響玩家策略。
+- **測試與除錯：** 依序檢查開始指令、變數重設、倒數、每一種事件及時間外是否停止計分。
+
+## 家長回饋公版
 
 親愛的家長您好：
 
-今天的主題是「變數（Variables）」。
+今天孩子完成了 Minecraft Education「變數：狩獵大師」課程。孩子使用 `score` 保存抓雞分數，並透過生物事件讓程式自動加分；中階版本再加入 `time_left` 與30秒倒數，完成一場能開始、計分及公布結果的遊戲。
 
-「變數」聽起來像是生硬的工程名詞，但我們透過一場 Minecraft「瘋狂抓雞大賽」，讓孩子在遊戲中自然理解這項核心邏輯。孩子今天化身為遊戲設計師，親手完成專屬的自動計分板與倒數計時器。
+進階程式加入牛扣分、羊加速與蝙蝠失明，讓孩子理解事件、條件判斷與遊戲規則如何共同影響玩家策略。
 
-**孩子今天掌握的三項程式能力：**
+孩子今天完成的程度為【低階／中階／高階】，課堂表現【請填寫具體表現，例如：能自行檢查倒數或事件條件】。在遊戲中完成【請填寫回合或成果】，並能說明【請填寫孩子掌握的概念】。
 
-1. **把變數具象化成「有標籤的魔法箱」**  
-   孩子建立「分數」與「時間」變數，用來儲存並追蹤遊戲中的資料。
-2. **分辨「設為」與「改變」**  
-   比賽開始前將分數設為 0；每抓到一隻雞，分數增加 1；倒數期間，時間每秒減少 1。
-3. **控制電腦的運算節奏**  
-   孩子使用暫停 1000 毫秒，讓程式每一秒更新一次倒數，練習控制程式流程。
-
-進階挑戰中，孩子也加入牛扣分、羊加速與蝙蝠失明等規則，理解不同事件如何產生不同結果。這不只是完成一段程式，更是把自己寫的規則真正變成一場可以遊玩的遊戲。
-
-</details>
-
-## 教師課後確認
-
-- [ ] 全班完成低階或中階版本。
-- [ ] 進度較快的學生有完成高階挑戰。
-- [ ] 學生能說出變數如何保存分數與時間。
-- [ ] 學生實際使用自己寫的程式完成遊戲回合。
-- [ ] 下課前完成今日程式概念複習。
+回家後可以請孩子分享：「分數和剩餘時間為什麼要用變數保存？」幫助孩子用自己的話整理今天的學習。
