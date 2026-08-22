@@ -1,7 +1,5 @@
 # 教師 SOP｜匯入 MakeCode 分享連結至 Minecraft Education
 
-> 適用平台：Mac 與 Windows。兩個平台的匯入流程相同。
-
 ## 使用時機
 
 教案若提供低階、中階或高階 MakeCode 分享連結，老師與學生可依下列步驟將專案匯入 Minecraft Education。每個程度應使用一份獨立專案，不要將低、中、高階程式疊在同一份專案中。
