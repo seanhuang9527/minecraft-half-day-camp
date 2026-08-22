@@ -1,4 +1,10 @@
 safe = 0
+arena_origin = world(0, 0, 0)
+
+
+# 將入口金塊上方的位置加上相對位移，換算成固定世界座標
+def arena_pos(x, y, z):
+    return positions.add(arena_origin, pos(x, y, z))
 
 
 # 建立16×16正式比賽地板
@@ -13,101 +19,106 @@ def build_formal_floor():
             if color_number == 0:
                 blocks.fill(
                     RED_WOOL,
-                    pos(x1, -2, z1),
-                    pos(x1 + 3, -2, z1 + 3),
+                    arena_pos(x1, -2, z1),
+                    arena_pos(x1 + 3, -2, z1 + 3),
                     FillOperation.REPLACE
                 )
 
             if color_number == 1:
                 blocks.fill(
                     YELLOW_WOOL,
-                    pos(x1, -2, z1),
-                    pos(x1 + 3, -2, z1 + 3),
+                    arena_pos(x1, -2, z1),
+                    arena_pos(x1 + 3, -2, z1 + 3),
                     FillOperation.REPLACE
                 )
 
             if color_number == 2:
                 blocks.fill(
                     GREEN_WOOL,
-                    pos(x1, -2, z1),
-                    pos(x1 + 3, -2, z1 + 3),
+                    arena_pos(x1, -2, z1),
+                    arena_pos(x1 + 3, -2, z1 + 3),
                     FillOperation.REPLACE
                 )
 
             if color_number == 3:
                 blocks.fill(
                     BLUE_WOOL,
-                    pos(x1, -2, z1),
-                    pos(x1 + 3, -2, z1 + 3),
+                    arena_pos(x1, -2, z1),
+                    arena_pos(x1 + 3, -2, z1 + 3),
                     FillOperation.REPLACE
                 )
 
 
 # 輸入7：建立正式比賽場
 def on_on_chat7():
+    global arena_origin
+
+    # 記住老師目前腳下的位置，之後場地不會跟著老師移動
+    arena_origin = player.position()
+
     blocks.fill(
         AIR,
-        pos(-9, -13, 2),
-        pos(8, 3, 19),
+        arena_pos(-9, -13, 2),
+        arena_pos(8, 3, 19),
         FillOperation.REPLACE
     )
 
     # 入口
     blocks.fill(
         STONE,
-        pos(-1, -1, -2),
-        pos(0, -1, 2),
+        arena_pos(-1, -1, -2),
+        arena_pos(0, -1, 2),
         FillOperation.REPLACE
     )
-    blocks.place(GOLD_BLOCK, pos(0, -1, 0))
+    blocks.place(GOLD_BLOCK, arena_pos(0, -1, 0))
 
     # 下方史萊姆層
     blocks.fill(
         SLIME_BLOCK,
-        pos(-8, -14, 3),
-        pos(7, -14, 18),
+        arena_pos(-8, -14, 3),
+        arena_pos(7, -14, 18),
         FillOperation.REPLACE
     )
 
     # 左右玻璃牆
     blocks.fill(
         GLASS,
-        pos(-9, -13, 2),
-        pos(-9, 3, 19),
+        arena_pos(-9, -13, 2),
+        arena_pos(-9, 3, 19),
         FillOperation.REPLACE
     )
     blocks.fill(
         GLASS,
-        pos(8, -13, 2),
-        pos(8, 3, 19),
+        arena_pos(8, -13, 2),
+        arena_pos(8, 3, 19),
         FillOperation.REPLACE
     )
 
     # 後方玻璃牆
     blocks.fill(
         GLASS,
-        pos(-9, -13, 19),
-        pos(8, 3, 19),
+        arena_pos(-9, -13, 19),
+        arena_pos(8, 3, 19),
         FillOperation.REPLACE
     )
 
     # 前方玻璃牆
     blocks.fill(
         GLASS,
-        pos(-9, -13, 2),
-        pos(8, -2, 2),
+        arena_pos(-9, -13, 2),
+        arena_pos(8, -2, 2),
         FillOperation.REPLACE
     )
     blocks.fill(
         GLASS,
-        pos(-9, -1, 2),
-        pos(-2, 3, 2),
+        arena_pos(-9, -1, 2),
+        arena_pos(-2, 3, 2),
         FillOperation.REPLACE
     )
     blocks.fill(
         GLASS,
-        pos(1, -1, 2),
-        pos(8, 3, 2),
+        arena_pos(1, -1, 2),
+        arena_pos(8, 3, 2),
         FillOperation.REPLACE
     )
 
@@ -122,6 +133,10 @@ player.on_chat("7", on_on_chat7)
 
 # 輸入6：恢復完整正式地板
 def on_on_chat6():
+    global arena_origin
+
+    # 輸入6前必須站在入口金塊上
+    arena_origin = player.position()
     build_formal_floor()
     player.tell(
         mobs.target(LOCAL_PLAYER),
@@ -139,32 +154,32 @@ def prepare_formal_floor(shrink):
         # 前面縮小
         blocks.fill(
             AIR,
-            pos(-8, -2, 3),
-            pos(7, -2, 2 + shrink),
+            arena_pos(-8, -2, 3),
+            arena_pos(7, -2, 2 + shrink),
             FillOperation.REPLACE
         )
 
         # 後面縮小
         blocks.fill(
             AIR,
-            pos(-8, -2, 19 - shrink),
-            pos(7, -2, 18),
+            arena_pos(-8, -2, 19 - shrink),
+            arena_pos(7, -2, 18),
             FillOperation.REPLACE
         )
 
         # 左邊縮小
         blocks.fill(
             AIR,
-            pos(-8, -2, 3 + shrink),
-            pos(-9 + shrink, -2, 18 - shrink),
+            arena_pos(-8, -2, 3 + shrink),
+            arena_pos(-9 + shrink, -2, 18 - shrink),
             FillOperation.REPLACE
         )
 
         # 右邊縮小
         blocks.fill(
             AIR,
-            pos(8 - shrink, -2, 3 + shrink),
-            pos(7, -2, 18 - shrink),
+            arena_pos(8 - shrink, -2, 3 + shrink),
+            arena_pos(7, -2, 18 - shrink),
             FillOperation.REPLACE
         )
 
@@ -172,6 +187,10 @@ def prepare_formal_floor(shrink):
 # 輸入5：開始10回合正式比賽
 def on_on_chat5():
     global safe
+    global arena_origin
+
+    # 輸入5前站在入口金塊上；記住位置後老師便可以自由移動
+    arena_origin = player.position()
 
     shrink = 0
 
@@ -210,32 +229,32 @@ def on_on_chat5():
             blocks.replace(
                 AIR,
                 RED_WOOL,
-                pos(min_x, -2, min_z),
-                pos(max_x, -2, max_z)
+                arena_pos(min_x, -2, min_z),
+                arena_pos(max_x, -2, max_z)
             )
 
         if safe != 2:
             blocks.replace(
                 AIR,
                 YELLOW_WOOL,
-                pos(min_x, -2, min_z),
-                pos(max_x, -2, max_z)
+                arena_pos(min_x, -2, min_z),
+                arena_pos(max_x, -2, max_z)
             )
 
         if safe != 3:
             blocks.replace(
                 AIR,
                 GREEN_WOOL,
-                pos(min_x, -2, min_z),
-                pos(max_x, -2, max_z)
+                arena_pos(min_x, -2, min_z),
+                arena_pos(max_x, -2, max_z)
             )
 
         if safe != 4:
             blocks.replace(
                 AIR,
                 BLUE_WOOL,
-                pos(min_x, -2, min_z),
-                pos(max_x, -2, max_z)
+                arena_pos(min_x, -2, min_z),
+                arena_pos(max_x, -2, max_z)
             )
 
         player.say("危險地板消失！")
