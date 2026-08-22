@@ -1,5 +1,7 @@
 # 梯次 M｜隨機數：閃動格子
 
+## 基本資訊
+
 - 課程時間：09:00－12:00
 - 遊戲版本：Minecraft Education
 - 程式平台：Microsoft MakeCode
