@@ -1,4 +1,12 @@
-# 目前缺少
-# 程式名稱：自動採集並耕種
-# 原始程式頁只寫「程式碼待補」，沒有可執行文字碼。
-# 待確認種子物品欄與 5×5 農田配置後，補上完整 MakeCode Python 並實機驗證。
+def on_on_chat():
+    agent.move(UP, 1)
+    agent.set_slot(1)
+    for index in range(5):
+        for index2 in range(5):
+            agent.move(FORWARD, 1)
+            agent.destroy(DOWN)
+            agent.place(DOWN)
+            agent.collect_all()
+        agent.move(BACK, 5)
+        agent.move(RIGHT, 1)
+player.on_chat("3", on_on_chat)
