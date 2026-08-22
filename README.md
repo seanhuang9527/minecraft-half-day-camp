@@ -35,4 +35,8 @@
 
 - [神木村場地與座標指南](shared/maps/神木村.md)
 - [下載神木村 v8](shared/maps/神木村v8.mcworld)
-- [教案問題回報](https://github.com/seanhuang9527/minecraft-half-day-camp/issues/new?template=lesson-problem.yml)
+- [下載小翔老師麥塊課堂簡報](shared/presentations/小翔老師_麥塊課堂簡報.pptx)
+
+## 教案問題回報
+
+[回報教案問題](https://github.com/seanhuang9527/minecraft-half-day-camp/issues/new?template=lesson-problem.yml)
