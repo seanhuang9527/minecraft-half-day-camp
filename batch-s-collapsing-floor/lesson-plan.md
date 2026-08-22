@@ -9,12 +9,12 @@
 - 正式地圖：[神木村 v6](../shared/maps/神木村v6.mcworld)
 - 備用地圖：[神木村 v5](maps/神木村v5.mcworld)
 - 遊戲靈感：Hex-A-Gone／糖豆人式崩落地板
-- 遊戲目標：學生使用自己完成的程式，讓走過的羊毛地板消失，在三層平台中移動並成為最後留在場上的玩家。
+- 遊戲目標：學生使用自己完成的程式，讓走過的羊毛地板消失，在五層平台中移動並成為最後留在場上的玩家。
 
 ## 課前準備
 
 - 場地包含一個教師示範場、一個最多八人共用測試場，以及三個正式比賽場。
-- 教師示範場與正式場使用三層 25×25 羊毛平台；每層相隔 5 格。
+- 教師示範場與正式場使用五層 25×25 羊毛平台；每層相隔 5 格。
 - 共用測試場需預留較大活動空間，讓八位學生能同時測試，不使用個人隔間。
 - 最底層下方設置較深的乾燥乾草坑，避免第三人稱視角卡住。
 - 樓梯、觀戰區地面及玻璃牆下方均鋪設拒絕方塊，避免學生破壞玻璃或疊方塊離開。
@@ -25,7 +25,7 @@
 | 教學階段 | 老師帶學生完成的程式 | 程式完成標準 | 完成後的遊戲或比賽 |
 |---|---|---|---|
 | 低階：崩落地板 | 使用玩家走路事件，把指定位置的白色羊毛換成空氣 | 走路時，玩家後下方的白色羊毛會消失 | 到共用測試區完成基礎移動挑戰 |
-| 中階：條件判斷 | 先判斷指定位置是否為白色羊毛，再移除方塊 | 只有白色羊毛會消失，其他方塊不受影響 | 參加三層崩落地板正式賽 |
+| 中階：條件判斷 | 先判斷指定位置是否為白色羊毛，再移除方塊 | 只有白色羊毛會消失，其他方塊不受影響 | 參加五層崩落地板正式賽 |
 | 高階：跳躍與加速 | 加入跳躍提升，以及黃色羊毛的加速條件 | 白色羊毛消失；黃色羊毛提供加速後也消失 | 進行可跨越缺口、搶奪黃色方塊的進階賽 |
 
 ## 遊戲內容
@@ -40,9 +40,9 @@
 
 ### 學生任務
 
-- 在三層羊毛平台上持續移動，規劃路線並避開已消失的方塊。
-- 掉到第二層或第三層後仍可繼續比賽。
-- 掉出第三層後進入乾草坑，再沿樓梯前往該關觀戰區。
+- 在五層羊毛平台上持續移動，規劃路線並避開已消失的方塊。
+- 掉到較低樓層後仍可繼續比賽。
+- 掉出最底層後進入乾草坑，再沿樓梯前往該關觀戰區。
 - 留在場上的最後一位學生為該關冠軍。
 
 ### 勝負與獎品
@@ -147,10 +147,82 @@ player.on_travelled(WALK, on_travelled_walk)
 
 - 既有資料沒有留下競技場固定座標；老師應以神木村內的入口、示範場、八人測試場及三個正式場作為定位參考，並在正式地圖中自行記錄座標。
 - 學生程式使用玩家相對座標 `pos(0, -1, -1)`，不依賴場地的絕對座標；世界 Z 軸負方向固定，不會隨玩家面向旋轉。
-- 三層 25×25 平台、乾草坑、樓梯、觀戰區、玻璃牆及拒絕方塊構成大型場地，使用完整 `.mcworld` 保存最穩定。
-- 本梯次不另附教師生成 Python 或結構方塊檔。大型場地若拆成多個結構，容易造成層高、觀戰區與傳送動線錯位。
-- 每關結束後，老師以乾淨世界備份重開最可靠；若只修補少量方塊，可在創造模式補回白色與黃色羊毛。
+- 五層 25×25 平台、乾草坑、樓梯、觀戰區、玻璃牆及拒絕方塊構成大型場地；可保留完整 `.mcworld`，也可使用下方教師 Python 在其他地圖生成。
+- 教師地形程式使用老師站立位置作為相對原點；換地圖時不需沿用神木村的固定座標，但執行前必須確認生成範圍內沒有要保留的建築。
+- 每關結束後，老師以乾淨世界備份重開最可靠；若只修補少量方塊，可在創造模式補回白色與黃色羊毛，或回到原點重新執行地形程式。
 - 切換下一關時，老師先飛到新場地安全起點，再輸入 `/tp @a @s` 傳送全班。
+
+## 教師用：生成正式場與共用測試場
+
+- **聊天指令 `1`：** 生成五層 25×25 崩落平台、黃色加速點、乾草坑、玻璃外牆、出口、鷹架與觀戰區。
+- **聊天指令 `2`：** 生成 35×25 共用測試平台、三個黃色測試區、乾草底層與返回階梯。
+- **生成原點：** 老師執行指令時的站立位置；所有 `pos()` 都是相對座標。
+- **安全範圍：** 指令 `1` 約使用 X `-13～25`、Y `-30～3`、Z `-13～13`；指令 `2` 約使用 X `-20～25`、Y `-9～-1`、Z `-15～15`。
+- **使用提醒：** 執行前先備份世界並確認整個範圍為空地。正式場與測試場應在不同原點分開生成，不要疊在同一位置。
+- **實機狀態：** 此程式由使用者提供，仍需在預定 Minecraft Education 版本中重新測試生成範圍、出入口與玩家動線。
+- [下載教師地形 Python](code/teacher-terrain.py)
+
+```python
+def on_chat_1():
+    for index in range(5):
+        blocks.fill(
+            WOOL,
+            pos(-12, -1 - index * 5, -12),
+            pos(12, -1 - index * 5, 12),
+            FillOperation.REPLACE
+        )
+
+        blocks.place(YELLOW_WOOL, pos(0, -1 - index * 5, 0))
+        blocks.place(YELLOW_WOOL, pos(-8, -1 - index * 5, 0))
+        blocks.place(YELLOW_WOOL, pos(8, -1 - index * 5, 0))
+        blocks.place(YELLOW_WOOL, pos(0, -1 - index * 5, -8))
+        blocks.place(YELLOW_WOOL, pos(0, -1 - index * 5, 8))
+
+    blocks.fill(HAY_BLOCK, pos(-12, -29, -12), pos(12, -29, 12), FillOperation.REPLACE)
+    blocks.fill(GLASS, pos(-13, -28, -13), pos(-13, 3, 13), FillOperation.REPLACE)
+    blocks.fill(GLASS, pos(13, -28, -13), pos(13, 3, 13), FillOperation.REPLACE)
+    blocks.fill(GLASS, pos(-13, -28, -13), pos(13, 3, -13), FillOperation.REPLACE)
+    blocks.fill(GLASS, pos(-13, -28, 13), pos(13, 3, 13), FillOperation.REPLACE)
+
+    blocks.fill(blocks.block_by_name("deny"), pos(-13, -30, -13), pos(-13, -30, 13), FillOperation.REPLACE)
+    blocks.fill(blocks.block_by_name("deny"), pos(13, -30, -13), pos(13, -30, 13), FillOperation.REPLACE)
+    blocks.fill(blocks.block_by_name("deny"), pos(-13, -30, -13), pos(13, -30, -13), FillOperation.REPLACE)
+    blocks.fill(blocks.block_by_name("deny"), pos(-13, -30, 13), pos(13, -30, 13), FillOperation.REPLACE)
+
+    blocks.fill(AIR, pos(13, -28, -1), pos(13, -27, 1), FillOperation.REPLACE)
+    blocks.fill(STONE, pos(13, -29, -1), pos(16, -29, 1), FillOperation.REPLACE)
+    blocks.fill(GLASS, pos(13, -28, -2), pos(17, -2, -2), FillOperation.REPLACE)
+    blocks.fill(GLASS, pos(13, -28, 2), pos(17, -2, 2), FillOperation.REPLACE)
+    blocks.fill(GLASS, pos(17, -28, -2), pos(17, -2, 2), FillOperation.REPLACE)
+
+    blocks.fill(blocks.block_by_name("deny"), pos(14, -1, -13), pos(25, -1, 13), FillOperation.REPLACE)
+    blocks.fill(STONE, pos(14, 0, -12), pos(25, 0, 12), FillOperation.REPLACE)
+    blocks.fill(GLASS, pos(14, 1, -13), pos(25, 3, -13), FillOperation.REPLACE)
+    blocks.fill(GLASS, pos(14, 1, 13), pos(25, 3, 13), FillOperation.REPLACE)
+    blocks.fill(GLASS, pos(25, 1, -13), pos(25, 3, 13), FillOperation.REPLACE)
+    blocks.fill(SCAFFOLDING, pos(16, -28, 0), pos(16, 0, 0), FillOperation.REPLACE)
+
+player.on_chat("1", on_chat_1)
+
+
+def on_chat_2():
+    blocks.fill(HAY_BLOCK, pos(-20, -9, -15), pos(25, -9, 15), FillOperation.REPLACE)
+    blocks.fill(WOOL, pos(-17, -1, -12), pos(17, -1, 12), FillOperation.REPLACE)
+    blocks.fill(YELLOW_WOOL, pos(-10, -1, -1), pos(-8, -1, 1), FillOperation.REPLACE)
+    blocks.fill(YELLOW_WOOL, pos(-1, -1, -1), pos(1, -1, 1), FillOperation.REPLACE)
+    blocks.fill(YELLOW_WOOL, pos(8, -1, -1), pos(10, -1, 1), FillOperation.REPLACE)
+
+    blocks.fill(STONE, pos(25, -8, -1), pos(25, -8, 1), FillOperation.REPLACE)
+    blocks.fill(STONE, pos(24, -7, -1), pos(24, -7, 1), FillOperation.REPLACE)
+    blocks.fill(STONE, pos(23, -6, -1), pos(23, -6, 1), FillOperation.REPLACE)
+    blocks.fill(STONE, pos(22, -5, -1), pos(22, -5, 1), FillOperation.REPLACE)
+    blocks.fill(STONE, pos(21, -4, -1), pos(21, -4, 1), FillOperation.REPLACE)
+    blocks.fill(STONE, pos(20, -3, -1), pos(20, -3, 1), FillOperation.REPLACE)
+    blocks.fill(STONE, pos(19, -2, -1), pos(19, -2, 1), FillOperation.REPLACE)
+    blocks.fill(STONE, pos(18, -1, -1), pos(18, -1, 1), FillOperation.REPLACE)
+
+player.on_chat("2", on_chat_2)
+```
 
 ## 上課知識點
 
@@ -183,7 +255,7 @@ player.on_travelled(WALK, on_travelled_walk)
 
 親愛的家長您好：
 
-今天孩子完成了 Minecraft Education「條件判斷：方塊崩落大逃亡」課程，使用玩家走路事件與相對座標，製作走過後會消失的羊毛地板。孩子再透過條件判斷控制白色羊毛、黃色羊毛與其他方塊的不同反應，並實際在三層競技場中使用自己的程式進行挑戰。
+今天孩子完成了 Minecraft Education「條件判斷：方塊崩落大逃亡」課程，使用玩家走路事件與相對座標，製作走過後會消失的羊毛地板。孩子再透過條件判斷控制白色羊毛、黃色羊毛與其他方塊的不同反應，並實際在五層競技場中使用自己的程式進行挑戰。
 
 孩子今天完成的程度為【低階／中階／高階】，課堂表現【請填寫具體表現，例如：能用不同方塊逐一測試條件是否正確】。在正式比賽中完成【請填寫關卡或成果】，並展現【請填寫觀察、除錯、路線規劃或臨場反應】。
 

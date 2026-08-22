@@ -16,6 +16,7 @@
 - 每台電腦確認能加入同一世界、按 C 開啟 MakeCode 並建立空白專案。
 - 確認神木村「程式挑戰入口」NPC 的「前往 A 點」按鈕可用，B、C、D 點 NPC 能返回神木村。
 - 八位學生各分配一條獨立跑道；確認每條跑道的 Agent 起點與面向。
+- 需要在其他地圖重建場地時，先備份世界，老師站在預定的 A 點中央，執行教師地形程式的聊天指令 `9`。
 - 依地圖設定準備足量建材；若 Agent 需要物品欄，統一放入第 1 格並先測試。
 - 只把正在闖關的學生切換成創造模式，回到神木村後立即切回生存模式。
 - 老師保留一份未使用的 `.mcworld`，並課前完整測試三條 50 排路線。
@@ -39,9 +40,97 @@
 
 ![神木村程式挑戰入口 NPC](images/course-setup-01.png)
 
-場地具有八條獨立跑道，並以 A～D 點串接水平、上坡與下坡挑戰。既有資料沒有記錄固定座標，因此本梯次以 NPC 傳送點、跑道色標與 Agent 起點方塊作為可靠參考；老師不要只靠座標定位。
+場地具有八條獨立跑道，並以 A～D 點串接水平、上坡與下坡挑戰。教師地形程式以老師執行指令時的站立位置作為 A 點中央與相對原點，因此不需要沿用神木村的固定座標。老師應記錄當次執行位置，並以 NPC 傳送點、跑道色標與 Agent 起點方塊交叉確認。
 
 ![A～D 點八人挑戰場地](images/course-setup-02.png)
+
+### 教師地形程式｜八人造橋關卡
+
+先備份地圖，確認老師周圍的大範圍內沒有需要保留的建築。老師站在預定的 **A 點中央**，建立獨立 MakeCode 專案、貼入下方程式，再輸入聊天指令 `9`。
+
+- A→B：水平橋，約 50 排。
+- B→C：往上橋，50 排，高度增加 50 格。
+- C→D：往下橋，50 排。
+- 每個平臺寬約 42 格，可容納八條四格寬跑道。
+- A、B、C 使用八種顏色地毯標示跑道起點。
+- 所有固定平臺下方都有拒絕方塊。
+- B、C 的邊界方塊由老師在放行前手動破壞。
+
+> **測試狀態：尚未實機驗證。** 正式授課前必須用地圖副本測試生成範圍、八條跑道、三段橋的銜接位置、Agent 起點高度與面向。
+
+```python
+def on_chat_9():
+    deny_block = blocks.block_by_name("deny")
+    border_block = blocks.block_by_name("border_block")
+
+    red_carpet = blocks.block_by_name("red_carpet")
+    orange_carpet = blocks.block_by_name("orange_carpet")
+    yellow_carpet = blocks.block_by_name("yellow_carpet")
+    lime_carpet = blocks.block_by_name("lime_carpet")
+    light_blue_carpet = blocks.block_by_name("light_blue_carpet")
+    blue_carpet = blocks.block_by_name("blue_carpet")
+    purple_carpet = blocks.block_by_name("purple_carpet")
+    pink_carpet = blocks.block_by_name("pink_carpet")
+
+    # A 點：水平橋起點
+    blocks.fill(deny_block, pos(-21, -2, -4), pos(20, -2, 4), FillOperation.REPLACE)
+    blocks.fill(STONE_BRICKS, pos(-21, -1, -4), pos(20, -1, 4), FillOperation.REPLACE)
+    blocks.fill(STONE_BRICKS, pos(-21, 0, -4), pos(-21, 1, 4), FillOperation.REPLACE)
+    blocks.fill(STONE_BRICKS, pos(20, 0, -4), pos(20, 1, 4), FillOperation.REPLACE)
+
+    blocks.place(red_carpet, pos(-19, 0, 2))
+    blocks.place(orange_carpet, pos(-14, 0, 2))
+    blocks.place(yellow_carpet, pos(-9, 0, 2))
+    blocks.place(lime_carpet, pos(-4, 0, 2))
+    blocks.place(light_blue_carpet, pos(1, 0, 2))
+    blocks.place(blue_carpet, pos(6, 0, 2))
+    blocks.place(purple_carpet, pos(11, 0, 2))
+    blocks.place(pink_carpet, pos(16, 0, 2))
+
+    # B 點：距離 A 點約 50 格
+    blocks.fill(deny_block, pos(-21, -2, 54), pos(20, -2, 62), FillOperation.REPLACE)
+    blocks.fill(GOLD_BLOCK, pos(-21, -1, 54), pos(20, -1, 62), FillOperation.REPLACE)
+    blocks.fill(STONE_BRICKS, pos(-21, 0, 54), pos(-21, 1, 62), FillOperation.REPLACE)
+    blocks.fill(STONE_BRICKS, pos(20, 0, 54), pos(20, 1, 62), FillOperation.REPLACE)
+
+    blocks.place(red_carpet, pos(-19, 0, 60))
+    blocks.place(orange_carpet, pos(-14, 0, 60))
+    blocks.place(yellow_carpet, pos(-9, 0, 60))
+    blocks.place(lime_carpet, pos(-4, 0, 60))
+    blocks.place(light_blue_carpet, pos(1, 0, 60))
+    blocks.place(blue_carpet, pos(6, 0, 60))
+    blocks.place(purple_carpet, pos(11, 0, 60))
+    blocks.place(pink_carpet, pos(16, 0, 60))
+    blocks.fill(border_block, pos(-21, 0, 62), pos(20, 0, 62), FillOperation.REPLACE)
+
+    # C 點：比 B 點高 50 格
+    blocks.fill(deny_block, pos(-21, 48, 112), pos(20, 48, 120), FillOperation.REPLACE)
+    blocks.fill(blocks.block_by_name("quartz_block"), pos(-21, 49, 112), pos(20, 49, 120), FillOperation.REPLACE)
+    blocks.fill(STONE_BRICKS, pos(-21, 50, 112), pos(-21, 51, 120), FillOperation.REPLACE)
+    blocks.fill(STONE_BRICKS, pos(20, 50, 112), pos(20, 51, 120), FillOperation.REPLACE)
+
+    blocks.place(red_carpet, pos(-19, 50, 118))
+    blocks.place(orange_carpet, pos(-14, 50, 118))
+    blocks.place(yellow_carpet, pos(-9, 50, 118))
+    blocks.place(lime_carpet, pos(-4, 50, 118))
+    blocks.place(light_blue_carpet, pos(1, 50, 118))
+    blocks.place(blue_carpet, pos(6, 50, 118))
+    blocks.place(purple_carpet, pos(11, 50, 118))
+    blocks.place(pink_carpet, pos(16, 50, 118))
+    blocks.fill(border_block, pos(-21, 50, 120), pos(20, 50, 120), FillOperation.REPLACE)
+
+    # D 點：往下挑戰的終點
+    blocks.fill(deny_block, pos(-21, -1, 170), pos(20, -1, 178), FillOperation.REPLACE)
+    blocks.fill(blocks.block_by_name("diamond_block"), pos(-21, 0, 170), pos(20, 0, 178), FillOperation.REPLACE)
+    blocks.fill(STONE_BRICKS, pos(-21, 1, 170), pos(-21, 2, 178), FillOperation.REPLACE)
+    blocks.fill(STONE_BRICKS, pos(20, 1, 170), pos(20, 2, 178), FillOperation.REPLACE)
+
+    player.say("八人造橋關卡完成")
+
+player.on_chat("9", on_chat_9)
+```
+
+- [下載教師地形 Python](code/teacher-terrain.py)
 
 ## 遊戲任務：程式造橋接力
 
@@ -161,7 +250,7 @@ player.on_chat("4", on_on_chat)
 
 ### 保存方式
 
-- A～D 點、NPC、八條跑道及高度差屬於大型整體關卡，使用完整 `.mcworld` 保存最穩定。
+- A～D 點、NPC、八條跑道及高度差屬於大型整體關卡，使用完整 `.mcworld` 保存最穩定；需要換地圖時也可使用教師地形程式重建固定平臺。
 - 本梯次不另附結構方塊檔；若拆成多個結構，不只匯入步驟增加，也容易失去各點之間的相對高度與方向。
 - 上課前複製一份乾淨世界；課後保留學生作品時另存新世界，不覆蓋公版地圖。
 
@@ -173,7 +262,7 @@ player.on_chat("4", on_on_chat)
 
 ### 跨地圖使用
 
-若要在其他地圖上課，需自行建立 A～D 四個參考點、三段高度相符的終點與八條互不重疊跑道。場地規模與高度關係無法只靠一組座標重建，因此不建議臨時用教師 Python 生成；直接複製世界或先製作完成的新地圖較安全。
+若要在其他地圖上課，先備份世界並選擇足夠開闊的區域。老師站在預定的 A 點中央執行聊天指令 `9`，程式會依相對座標建立 A～D 固定平臺、拒絕方塊、護欄、跑道色標與 B、C 邊界。生成後仍須由老師安排 Agent 起點、確認面向與測試三段 50 排橋的銜接位置；NPC 與傳送功能不包含在此教師程式內。
 
 ## 上課知識點
 
