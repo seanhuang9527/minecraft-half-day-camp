@@ -1,4 +1,5 @@
 def on_on_chat():
+    agent.set_slot(1)
     for index in range(4):
         agent.place(FORWARD)
         agent.move(RIGHT, 1)
