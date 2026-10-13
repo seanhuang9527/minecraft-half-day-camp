@@ -40,7 +40,7 @@
 ## 課前設備與帳號準備
 
 1. 老師與學生電腦都先登入 Minecraft Education，確認版本一致。
-2. 老師匯入最新的 [神木村 v8](../shared/maps/神木村v8.mcworld)，並保留一份未上課的原始公版。
+2. 老師匯入最新的 [神木村 v9](../shared/maps/神木村v9.mcworld)，並保留一份未上課的原始公版。
 3. 開啟 Code Builder，確認 Microsoft MakeCode 可以正常連線與執行聊天指令。
 4. 每個程度使用獨立的 MakeCode 專案，避免低、中、高階程式互相覆蓋。
 5. 分享連結的匯入方式請參考：[MakeCode 分享連結匯入 SOP](import-makecode-share-link.md)。
