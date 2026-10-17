@@ -34,6 +34,7 @@
 ## 共用資源
 
 - [神木村場地與座標指南](shared/maps/神木村.md)
+- [神木村地圖版本紀錄](shared/maps/CHANGELOG.md)
 - [下載神木村 v9](shared/maps/神木村v9.mcworld)
 - [下載小翔老師麥塊課堂簡報（beta)](shared/presentations/小翔老師_麥塊課堂簡報.pptx)
 
